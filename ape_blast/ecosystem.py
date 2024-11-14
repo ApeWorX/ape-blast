@@ -8,7 +8,7 @@ from ape_ethereum.transactions import (
     StaticFeeTransaction,
     TransactionType,
 )
-from ape_optimism import Optimism, OptimismConfig
+from ape_optimism.ecosystem import Optimism, OptimismConfig
 
 if TYPE_CHECKING:
     from ape.api import TransactionAPI
