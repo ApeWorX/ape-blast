@@ -49,6 +49,27 @@ def providers():
 
 
 def __getattr__(name: str):
-    import ape_blast.ecosystem as module
+    if name == "NETWORKS":
+        from ape_blast.ecosystem import NETWORKS
 
-    return getattr(module, name)
+        return NETWORKS
+
+    elif name == "Blast":
+        from ape_blast.ecosystem import Blast
+
+        return Blast
+
+    elif name == "BlastConfig":
+        from ape_blast.ecosystem import BlastConfig
+
+        return BlastConfig
+
+    else:
+        raise AttributeError(name)
+
+
+__all__ = [
+    "NETWORKS",
+    "Blast",
+    "BlastConfig",
+]
