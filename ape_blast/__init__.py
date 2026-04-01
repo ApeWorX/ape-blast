@@ -54,18 +54,17 @@ def __getattr__(name: str):
 
         return NETWORKS
 
-    elif name == "Blast":
+    if name == "Blast":
         from ape_blast.ecosystem import Blast
 
         return Blast
 
-    elif name == "BlastConfig":
+    if name == "BlastConfig":
         from ape_blast.ecosystem import BlastConfig
 
         return BlastConfig
 
-    else:
-        raise AttributeError(name)
+    raise AttributeError(name)
 
 
 __all__ = [

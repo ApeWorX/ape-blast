@@ -35,7 +35,7 @@ class BlastConfig(OptimismConfig):
 class Blast(Optimism):
     @property
     def config(self) -> BlastConfig:  # type: ignore
-        return cast(BlastConfig, self.config_manager.get_config("blast"))
+        return cast("BlastConfig", self.config_manager.get_config("blast"))
 
     def create_transaction(self, **kwargs) -> "TransactionAPI":
         """
@@ -74,7 +74,7 @@ class Blast(Optimism):
             tx_data["data"] = b""
 
         # Deduce the transaction type.
-        transaction_types: dict[int, type["TransactionAPI"]] = {
+        transaction_types: dict[int, type[TransactionAPI]] = {
             TransactionType.STATIC.value: StaticFeeTransaction,
             TransactionType.DYNAMIC.value: DynamicFeeTransaction,
             TransactionType.ACCESS_LIST.value: AccessListTransaction,
