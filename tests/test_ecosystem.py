@@ -42,7 +42,7 @@ def test_create_transaction_type_2(blast, tx_kwargs):
 
 @pytest.mark.parametrize(
     "tx_type",
-    (TransactionType.STATIC.value, TransactionType.DYNAMIC.value, _SECOND_STATIC_TYPE),
+    [TransactionType.STATIC.value, TransactionType.DYNAMIC.value, _SECOND_STATIC_TYPE],
 )
 def test_encode_transaction(tx_type, blast, eth_tester_provider):
     abi = MethodABI.model_validate(
